@@ -19,7 +19,8 @@ RUN pip install -r requirements.txt
 # create uploads folder
 RUN mkdir -p /app/uploads
 
-EXPOSE 7860
+EXPOSE 5000
 
 # run using gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:7860", "app:app", "--workers", "1", "--threads", "4"]
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app", "--workers", "1", "--threads", "4"]
+
